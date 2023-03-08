@@ -1,0 +1,1258 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://wiki.aosc-portal.com/pfsense/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.5.3">
+    
+    
+      
+        <title>PfSense documentation - Sandbox Support</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.7a952b86.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pfsense" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Sandbox Support" class="md-header__button md-logo" aria-label="Sandbox Support" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sandbox Support
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              PfSense documentation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent=""  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent=""  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Sandbox Support" class="md-nav__button md-logo" aria-label="Sandbox Support" data-md-component="logo">
+      
+  <img src="../assets/logo.png" alt="logo">
+
+    </a>
+    Sandbox Support
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Proxmox
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Proxmox" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Proxmox
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proxmox/#installation" class="md-nav__link">
+        Installation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proxmox/#gestion-des-acces" class="md-nav__link">
+        Gestion des accès
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proxmox/#problemes-connus" class="md-nav__link">
+        Problèmes connus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proxmox/#gestion-de-la-virtualisation" class="md-nav__link">
+        Gestion de la virtualisation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          PfSense
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PfSense" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          PfSense
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#ovh" class="md-nav__link">
+        OVH
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#gestion-du-reseau" class="md-nav__link">
+        Gestion du réseau
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#les-acces" class="md-nav__link">
+        Gestion des accès
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#wireguard" class="md-nav__link">
+        Wireguard
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#openvpn" class="md-nav__link">
+        OpenVPN
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="#rest-api" class="md-nav__link">
+        REST API
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ovh" class="md-nav__link">
+    OVH
+  </a>
+  
+    <nav class="md-nav" aria-label="OVH">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#console-web-ovh" class="md-nav__link">
+    Console web OVH
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-de-la-machine-virtuelle" class="md-nav__link">
+    Configuration de la machine virtuelle
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-du-reseau" class="md-nav__link">
+    Gestion du réseau
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestion du réseau">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interfaces-reseaux" class="md-nav__link">
+    Interfaces réseaux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serveur-dhcp" class="md-nav__link">
+    Serveur DHCP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#serveur-dns" class="md-nav__link">
+    Serveur DNS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routage-interne" class="md-nav__link">
+    Routage interne
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestion-des-acces" class="md-nav__link">
+    Gestion des accès
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestion des accès">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#acces-ssh" class="md-nav__link">
+    Accès SSH
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acces-web-internes" class="md-nav__link">
+    Accès web internes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acces-web-public" class="md-nav__link">
+    Accès web public
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wireguard" class="md-nav__link">
+    Wireguard
+  </a>
+  
+    <nav class="md-nav" aria-label="Wireguard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation-du-client" class="md-nav__link">
+    Installation du client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-des-cles-chriffrees" class="md-nav__link">
+    Gestion des clés chriffrées
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-du-client" class="md-nav__link">
+    Configuration du client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connexion-du-client" class="md-nav__link">
+    Connexion du client
+  </a>
+  
+    <nav class="md-nav" aria-label="Connexion du client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    Linux
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#macos" class="md-nav__link">
+    MacOS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#android" class="md-nav__link">
+    Android
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-a-pfsense" class="md-nav__link">
+    Intégration à PfSense
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-du-serveur" class="md-nav__link">
+    Configuration du serveur
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-des-utilisateurs" class="md-nav__link">
+    Configuration des utilisateurs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-des-routes" class="md-nav__link">
+    Gestion des routes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openvpn" class="md-nav__link">
+    OpenVPN
+  </a>
+  
+    <nav class="md-nav" aria-label="OpenVPN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    Configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routage" class="md-nav__link">
+    Routage
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creation-des-utilisateurs" class="md-nav__link">
+    Création des utilisateurs
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-des-clients" class="md-nav__link">
+    Configuration des clients
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration des clients">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#windows_1" class="md-nav__link">
+    Windows
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rest-api" class="md-nav__link">
+    REST API
+  </a>
+  
+    <nav class="md-nav" aria-label="REST API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gestion-dns" class="md-nav__link">
+    Gestion DNS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gestion-des-utilisateurs" class="md-nav__link">
+    Gestion des utilisateurs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="pfsense">PfSense</h1>
+<h2 id="ovh">OVH</h2>
+<p>La machine virtuelle PfSense dispose d'un accès internet grâce à un routage interne au serveur dédié lui permettant d'être rattaché à une IP FailOver.</p>
+<p><a href="../schema/sandbox-01.png"><img alt="sandbox 01" src="../schema/sandbox-01.png" /></a></p>
+<h3 id="console-web-ovh">Console web OVH</h3>
+<p>Une fois connecter à la console web d'OVH, il faut se rendre dans la section bare metal cloud et dérouler l'onglet des serveurs dédiés pour pouvoir choisir celui désiré :</p>
+<p><a href="../assets/search_ovh_dedicated_server.png"><img alt="search ovh dedicated server" src="../assets/search_ovh_dedicated_server.png" /></a></p>
+<p>Dans l'onglet de gestion des interfaces réseaux, on ouvre la console de gestion des adresses IP du serveur :</p>
+<p><a href="../assets/manage_ovh_dedicated_server_ip.png"><img alt="manage ovh dedicated server ip" src="../assets/manage_ovh_dedicated_server_ip.png" /></a></p>
+<p>On déplace l'adresse IP sur le serveur désiré :</p>
+<p><a href="../assets/move_ovh_dedicated_server_ip.png"><img alt="move ovh dedicated server ip" src="../assets/move_ovh_dedicated_server_ip.png" /></a></p>
+<p>Pour finir, on ajoute une adresse MAC virtuelle à l'adresse IP, ce qui permettra de router le traffic réseau sur la machine virtuelle possédant cette adresse MAC.</p>
+<p><a href="../assets/add_virtual_mac_to_ovh_dedicated_server.png"><img alt="add virtual mac to ovh dedicated server" src="../assets/add_virtual_mac_to_ovh_dedicated_server.png" /></a></p>
+<h3 id="configuration-de-la-machine-virtuelle">Configuration de la machine virtuelle</h3>
+<p>On commence par configurer l'interface réseau <em>vmbr0</em> du <strong>Proxmox</strong>.
+Celle doit être configurée en static sur l'adresse public du serveur.<br />
+Sa passerelle réseau doit impérativement être configurée.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>La configuration réseau de l'interface principale de <strong>Proxmox</strong> est effectuée par l'installeur.<br />
+Il n'est normalement pas nécessaire d'y toucher.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Les réseau OVH ont tous une passerelle en <em>254</em>.
+Pour connaître sa passerelle, il suffit de prendre les 3 premiers octets de l'adresse du serveur, 
+puis de compléter le dernier octet par <em>254</em>.</p>
+<p><a href="../assets/proxmox_network_settings.png"><img alt="proxmox network settings" src="../assets/proxmox_network_settings.png" /></a></p>
+</div>
+<p>Ensuite, on ajoute à la machine virtuelle <strong>PfSense</strong> son interface <strong>WAN</strong>, 
+en lui attribuant l'adresse <strong>MAC</strong> virtuelle de l'IP FailOver qui a été configurée au préalable.</p>
+<p><a href="../assets/proxmox_pfsense_network_interface.png"><img alt="proxmox pfsense network interface" src="../assets/proxmox_pfsense_network_interface.png" /></a></p>
+<p>Dans l'interface web d'administration de pfsense, on configure la passerelle par défaut qui sera utilisée pour le routage de tout le traffic réseau entrant et sortant.</p>
+<p><a href="../assets/pfsense_default_gateway_01.png"><img alt="pfsense default gateway" src="../assets/pfsense_default_gateway_01.png" /></a>
+<a href="../assets/pfsense_default_gateway_02.png"><img alt="pfsense default gateway" src="../assets/pfsense_default_gateway_02.png" /></a>
+<a href="../assets/pfsense_default_gateway_03.png"><img alt="pfsense default gateway" src="../assets/pfsense_default_gateway_03.png" /></a></p>
+<p>Puis on paramètre <strong>PfSense</strong> pour pointer dessus.</p>
+<p><a href="../assets/pfsense_default_gateway_04.png"><img alt="pfsense default gateway" src="../assets/pfsense_default_gateway_04.png" /></a></p>
+<p>Dans l'interface web d'administration de pfsense, on configure l'interface réseau <strong>WAN</strong>.</p>
+<p><a href="../assets/pfsense_WAN_interface_settings_01.png"><img alt="pfsense WAN interface settings" src="../assets/pfsense_WAN_interface_settings_01.png" /></a>
+<a href="../assets/pfsense_WAN_interface_settings_02.png"><img alt="pfsense WAN interface settings" src="../assets/pfsense_WAN_interface_settings_02.png" /></a>
+<a href="../assets/pfsense_WAN_interface_settings_03.png"><img alt="pfsense WAN interface settings" src="../assets/pfsense_WAN_interface_settings_03.png" /></a></p>
+<h2 id="gestion-du-reseau">Gestion du réseau</h2>
+<h3 id="interfaces-reseaux">Interfaces réseaux</h3>
+<p>Chaque nouvelle interface réseau attachée à la machine virtuelle PfSense est instantanément visible dans l'interface d'aministration du routeur :</p>
+<p><a href="../assets/pfsense_interfaces_creation.png"><img alt="pfsense interfaces creation" src="../assets/pfsense_interfaces_creation.png" /></a></p>
+<p>Une fois la nouvelle interface ajoutée à la gestion de PfSense, il reste à faire la configuration de cette interface, tout en s'assurant qu'elle soit activée :</p>
+<p><a href="../assets/pfsense_interface_creation_01.png"><img alt="pfsense interface creation" src="../assets/pfsense_interface_creation_01.png" /></a>
+<a href="../assets/pfsense_interface_creation_02.png"><img alt="pfsense interface creation" src="../assets/pfsense_interface_creation_02.png" /></a></p>
+<h3 id="serveur-dhcp">Serveur DHCP</h3>
+<p>Chaque interface à la possibilité de disposer de son propre server DHCP</p>
+<p><a href="../assets/pfsense_settings_dhcp_server.png"><img alt="pfsense_settings_dhcp_server" src="../assets/pfsense_settings_dhcp_server.png" /></a></p>
+<h3 id="serveur-dns">Serveur DNS</h3>
+<p>PfSense dispose de son propre résolver DNS basé sur <strong>Unbound</strong>. Il récupère sa résolution publique auprès des serveurs DNS de <strong>CloudFlare</strong> :</p>
+<p><a href="../assets/pfsense_settings_dns_01.png"><img alt="pfsense settings dns" src="../assets/pfsense_settings_dns_01.png" /></a>
+<a href="../assets/pfsense_settings_dns_02.png"><img alt="pfsense settings dns" src="../assets/pfsense_settings_dns_02.png" /></a></p>
+<p>Il est également possible de rajouter des entrées personnalisées dans la résolution locale :</p>
+<p><a href="../assets/pfsense_settings_dns_custom_resolv.png"><img alt="pfsense settings dns custom resolv" src="../assets/pfsense_settings_dns_custom_resolv.png" /></a></p>
+<h3 id="routage-interne">Routage interne</h3>
+<p>Le routeur laisse passer sur son interface publique :</p>
+<ul>
+<li>Le protocole <strong>ICMP</strong> : Pour permettre le ping du routeur à des fin surtout d'administration</li>
+<li>Le protocole <strong>SSH</strong> sur le port 2222 : Pour permettre d'accéder en shell au routeur</li>
+<li>Le protocole UDP sur le port de <strong>WIREGUARD</strong> (51820) : Pour permettre un accès VPN au uilisateurs</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Des règles d'accès pour les protocoles <strong>HTTP</strong> et <strong>HTTPS</strong> sont également en place mais désactivées par mesure de sécurité.<br />
+Elle peuvent être réactivées sur demande si besoin est (maintenance, incident, etc.)</p>
+</div>
+<p><a href="../assets/pfsense_routing_interface_WAN.png"><img alt="pfsense routing interface WAN" src="../assets/pfsense_routing_interface_WAN.png" /></a></p>
+<p>Le réseau principale (default) est totalement ouvert sur tous le réseau interne géré par PfSense :</p>
+<p><a href="../assets/pfsense_routing_interface_default.png"><img alt="pfsense routing interface default" src="../assets/pfsense_routing_interface_default.png" /></a></p>
+<p>Pour des besoins spécifiques, il est également possible de créer des routage restrictifs sur le traffic inter-réseau.
+Comme on peut le voir sur la capture suivante, le réseau peut communiquer avec le routeur ou avec internet.<br />
+Il peut également communiquer avec le réseau lié à Wireguard (le VPN), mais aucun autre réseau, pas même le défault ne peuvent communiquer avec lui.</p>
+<p><a href="../assets/pfsense_routing_interface_custom.png"><img alt="pfsense routing interface custom" src="../assets/pfsense_routing_interface_custom.png" /></a></p>
+<h2 id="gestion-des-acces">Gestion des accès</h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Définir une stratégie d'accès au PfSense</p>
+</div>
+<h3 id="acces-ssh">Accès SSH</h3>
+<p>Chaque compte créé dans le cadre d'un accès VPN <strong>OpenVPN</strong> se voit attribuer la possibilité de se connecter en shell sur le PfSense.<br />
+Cela permet si besoin aux collaborateurs de faire du ProxyJump SSH si besoin (éviter d'initialiser une connexion VPN pour se connecter à une machine virtuelle).</p>
+<h3 id="acces-web-internes">Accès web internes</h3>
+<p>Les accès web interne se font via tunnel VPN.<br />
+Pour PfSense, celui ci est accessible via le domain <ins>rt.infra.aosc</ins>, ou via toute les adresses passerelles de réseaux.</p>
+<p>Pour tout accès web à une un service hébergé sur une machine virtuelle, il suffit d'y accéder par son adresse IP.</p>
+<h3 id="acces-web-public">Accès web public</h3>
+<p>Les accès web publics à PfSense sont désactivés au niveau pare feu.<br />
+Ils peuvent être réactivés sur besoin en cas de problèmes réseaux.</p>
+<p>Pour les expositions de services herbergés sur la sandbox, il n'est à ce jour pas prévu d'exposer ces services (via reverse proxy par exemple).<br />
+Les accès devront se faire par tunnel VPN.</p>
+<h2 id="wireguard">Wireguard</h2>
+<p>PfSense fourni un accès <strong>VPN</strong> (Virtual Private Network) au réseau interne de l'hyperviseur <strong>Proxmox</strong>. </p>
+<h3 id="installation-du-client">Installation du client</h3>
+<p>Wireguard est disponible sur énormément de plateformes.<br />
+Pour les instructions d'installation, se référer à la <a href="https://www.wireguard.com/install/">documentation officielle</a></p>
+<h3 id="gestion-des-cles-chriffrees">Gestion des clés chriffrées</h3>
+<p>Wireguard nécessite l'utilisation de clé chifrées privées et publiques.</p>
+<p>Créer une paire de clés chifrées :</p>
+<div class="highlight"><pre><span></span><code>wg genkey <span class="p">|</span> tee privatekey <span class="p">|</span> wg pubkey &gt; publickey
+</code></pre></div>
+<p>Il est également possible de se rendre sur ce <a href="https://www.wireguardconfig.com/">site</a>, 
+générer une configuration aléatoire pour récupérer la clé public et privée.</p>
+<p>Dans le cas où vous voudriez garder ces clés, il faudra les déplacer en lieu sûr.<br />
+Dans le cas contraire, il suffit de les supprimer car plus utile.</p>
+<h3 id="configuration-du-client">Configuration du client</h3>
+<p>La méthode la plus simple est d'utiliser un fichier de configuration.  </p>
+<ul>
+<li><code>[Interface]</code> : Configure la configuration locale<ul>
+<li><code>Address</code> : Adresse ip (avec <strong>CIDR</strong>) de l'utilisateur</li>
+<li><code>PrivateKey</code> : Clé chifrée privée de l'utilisateur</li>
+<li><code>DNS</code> : Serveur <strong>DNS</strong> de référence un fois conncté.</li>
+</ul>
+</li>
+<li><code>[Peer]</code> : <ul>
+<li><code>PublicKey</code> : Clé chifrée publique du serveur distant</li>
+<li><code>Endpoint</code> : Adresse / Domaine du serveur distant avec son port (ex: <code>ip:port</code>)</li>
+<li><code>AllowedIPs</code> : Réseaux autorisés (Pour faire passer tous le traffic à travers la connexion: 0.0.0.0/0)</li>
+<li><code>PersistentKeepalive</code> : Persistence de la connexion en secondes</li>
+</ul>
+</li>
+</ul>
+<p>Pour exemple, avec le fichier <strong><em>aosc.conf</em></strong> :</p>
+<div class="highlight"><pre><span></span><code><span class="k">[Interface]</span><span class="w"></span>
+<span class="na">Address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">10.0.1.x/32</span><span class="w"></span>
+<span class="na">PrivateKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="na">DNS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">10.0.0.1</span><span class="w"></span>
+
+<span class="k">[Peer]</span><span class="w"></span>
+<span class="na">PublicKey</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>
+<span class="na">Endpoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">rt.aosc-portal.com:51820</span><span class="w"></span>
+<span class="na">AllowedIPs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">0.0.0.0/0</span><span class="w"></span>
+<span class="na">PersistentKeepalive</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">30</span><span class="w"></span>
+</code></pre></div>
+<h3 id="connexion-du-client">Connexion du client</h3>
+<h4 id="linux">Linux</h4>
+<p>Placez le fichier de configuration wireguard à l'emplacement suivant : <strong><em>/etc/wireguard/aosc.conf</em></strong></p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Ne pas utiliser de caractère spéciaux dans le nommage du fichier. Les interface virtuelle verra leur nom basé sur ce fichier, 
+cela pourrait donc faire disfonctionner le processus de connexion.</p>
+</div>
+<ul>
+<li>Activation du tunnel VPN</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo wg-quick up aosc
+</code></pre></div>
+<ul>
+<li>Affichage du statut de la connexion</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo wg
+</code></pre></div>
+<ul>
+<li>Désactivation du tunnel VPN</li>
+</ul>
+<div class="highlight"><pre><span></span><code>sudo wg-quick down aosc
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Pour une configuration automatique de la résolution DNS sur <strong>Linux</strong>, le paquet <em>resolvconf</em> doit être présent sur le system.
+Le fichier <strong><em>/etc/resolv.conf</em></strong> se doit d'être un lien symbolique du fichier <strong><em>/run/resolvconf/resolv.conf</em></strong>.
+Dans le cas contraire le changement de serveur DNS du système devra se faire manuellement.</p>
+</div>
+<h4 id="windows">Windows</h4>
+<ul>
+<li>Ouvrir le gestion de connexion Wireguard</li>
+</ul>
+<p><a href="../assets/wireguard_client_windows_01.PNG"><img alt="wireguard client windows" src="../assets/wireguard_client_windows_01.PNG" /></a></p>
+<ul>
+<li>Importer la connexion à partir d'un fichier de configuration</li>
+</ul>
+<p><a href="../assets/wireguard_client_windows_02.PNG"><img alt="wireguard client windows" src="../assets/wireguard_client_windows_02.PNG" /></a></p>
+<ul>
+<li>Vérifier les informations de la nouvelle connexion</li>
+</ul>
+<p><a href="../assets/wireguard_client_windows_03.PNG"><img alt="wireguard client windows" src="../assets/wireguard_client_windows_03.PNG" /></a></p>
+<ul>
+<li>Activer la connexion</li>
+</ul>
+<p><a href="../assets/wireguard_client_windows_04.PNG"><img alt="wireguard client windows" src="../assets/wireguard_client_windows_04.PNG" /></a></p>
+<h4 id="macos">MacOS</h4>
+<p>Ouvrir le gestionnaire de tunnel <strong>Wireguard</strong> :</p>
+<p><a href="../assets/wireguard_macos_import.png"><img alt="wireguard macos import" src="../assets/wireguard_macos_import.png" /></a></p>
+<p>Choisir un fichier à importer :</p>
+<p><a href="../assets/wireguard_macos_import_conf.png"><img alt="wireguard macos import conf" src="../assets/wireguard_macos_import_conf.png" /></a></p>
+<p>Vérifier les informations :</p>
+<p><a href="../assets/wireguard_macos_info.png"><img alt="wireguard macos info" src="../assets/wireguard_macos_info.png" /></a></p>
+<p>Activer la connexion :</p>
+<p><a href="../assets/wireguard_macos_activation.png"><img alt="wireguard macos activation" src="../assets/wireguard_macos_activation.png" /></a></p>
+<h4 id="android">Android</h4>
+<ul>
+<li>Récupérer l'application wireguard sur le play store</li>
+</ul>
+<p><a href="../assets/wireguard_android_download.jpg"><img alt="wireguard android download" src="../assets/wireguard_android_download.jpg" /></a></p>
+<ul>
+<li>Ajouter une nouvelle connexion à partir d'un fichier</li>
+</ul>
+<p><a href="../assets/wireguard_android_import_configuration.jpg"><img alt="wireguard android import configuration" src="../assets/wireguard_android_import_configuration.jpg" /></a></p>
+<ul>
+<li>Activer la connexion</li>
+</ul>
+<p><a href="../assets/wireguard_android_activation.jpg"><img alt="wireguard android activation" src="../assets/wireguard_android_activation.jpg" /></a></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Il est possible de conrtôller la connexion avec un simple ping</p>
+</div>
+<p><a href="../assets/wireguard_android_validation.jpg"><img alt="wireguard android validation" src="../assets/wireguard_android_validation.jpg" /></a></p>
+<h3 id="integration-a-pfsense">Intégration à PfSense</h3>
+<p>Wireguard est intégré aux dépôts officiels de PfSense.<br />
+Ainsi, son installation se fait par le gestionnaire de paquets de la solution logicielle.</p>
+<p>Tout d'abord, chercher le paquet :</p>
+<p><a href="../assets/search_pkg_wireguard.png"><img alt="search pkg wireguard" src="../assets/search_pkg_wireguard.png" /></a></p>
+<p>Ensuite, l'installer :</p>
+<p><a href="../assets/install_pkg_wireguard_01.png"><img alt="install pkg wireguard" src="../assets/install_pkg_wireguard_01.png" /></a>
+<a href="../assets/install_pkg_wireguard_02.png"><img alt="install pkg wireguard" src="../assets/install_pkg_wireguard_02.png" /></a></p>
+<h3 id="configuration-du-serveur">Configuration du serveur</h3>
+<p>Pour configurer un tunnel VPN, il suffit de se rendre dans l'onglet de configuration de Wireguard :</p>
+<p><a href="../assets/navigation_settings_wireguard.png"><img alt="navigation settings wireguard" src="../assets/navigation_settings_wireguard.png" /></a></p>
+<p>Puis, on créer un nouveau tunnel :</p>
+<p><a href="../assets/settings_wireguard_server.png"><img alt="settings wireguard server" src="../assets/settings_wireguard_server.png" /></a></p>
+<h3 id="configuration-des-utilisateurs">Configuration des utilisateurs</h3>
+<p>Pour configurer un nouvel utilisateur, il suffit de se rendre dans l'onglet de <em>Peer</em> :</p>
+<p><a href="../assets/settings_wireguard_client_01.png"><img alt="settings wireguard client" src="../assets/settings_wireguard_client_01.png" /></a></p>
+<p>Puis, on ajoute une nouvel connexion :</p>
+<p><a href="../assets/settings_wireguard_client_02.png"><img alt="settings wireguard client" src="../assets/settings_wireguard_client_02.png" /></a></p>
+<h3 id="gestion-des-routes">Gestion des routes</h3>
+<p>Le réseau Wireguard a accès à l'entièreté du réseau interne :</p>
+<p><a href="../assets/settings_wireguard_routing.png"><img alt="settings wireguard routing" src="../assets/settings_wireguard_routing.png" /></a></p>
+<p>Il est également autorisé à sortir sur internet :</p>
+<p><a href="../assets/settings_wireguard_nat.png"><img alt="settings wireguard nat" src="../assets/settings_wireguard_nat.png" /></a></p>
+<h2 id="openvpn">OpenVPN</h2>
+<h3 id="installation">Installation</h3>
+<p>Le paquet OpenVPN est inclus nativement dans PfSense, il n'y a donc pas d'installation particulière à faire.</p>
+<h3 id="configuration">Configuration</h3>
+<p>Tout d'abord, il faut créer le certificat d'autorité qui sera utilisé par le serveur OpenVPN :</p>
+<p><a href="../assets/openvpn_ca_creation_01.png"><img alt="openvpn ca creation" src="../assets/openvpn_ca_creation_01.png" /></a>
+<a href="../assets/openvpn_ca_creation_02.png"><img alt="openvpn ca creation" src="../assets/openvpn_ca_creation_02.png" /></a></p>
+<p>Ensuite vient la création du certificat server signé par le certification d'authorité qui sera utilisé par le serveur OpenVPN :</p>
+<p><a href="../assets/openvpn_certificate_creation_01.png"><img alt="openvpn certificate creation" src="../assets/openvpn_certificate_creation_01.png" /></a>
+<a href="../assets/openvpn_certificate_creation_02.png"><img alt="openvpn certificate creation" src="../assets/openvpn_certificate_creation_02.png" /></a>
+<a href="../assets/openvpn_certificate_creation_03.png"><img alt="openvpn certificate creation" src="../assets/openvpn_certificate_creation_03.png" /></a></p>
+<p>Pour finir, il faut créer le server OpenVPN :</p>
+<p><a href="../assets/openvpn_server_configuration_01.png"><img alt="openvpn server configuration " src="../assets/openvpn_server_configuration_01.png" /></a>
+<a href="../assets/openvpn_server_configuration_02.png"><img alt="openvpn server configuration " src="../assets/openvpn_server_configuration_02.png" /></a>
+<a href="../assets/openvpn_server_configuration_03.png"><img alt="openvpn server configuration " src="../assets/openvpn_server_configuration_03.png" /></a>
+<a href="../assets/openvpn_server_configuration_04.png"><img alt="openvpn server configuration " src="../assets/openvpn_server_configuration_04.png" /></a>
+<a href="../assets/openvpn_server_configuration_05.png"><img alt="openvpn server configuration " src="../assets/openvpn_server_configuration_05.png" /></a>
+<a href="../assets/openvpn_server_configuration_06.png"><img alt="openvpn server configuration " src="../assets/openvpn_server_configuration_06.png" /></a>
+<a href="../assets/openvpn_server_configuration_07.png"><img alt="openvpn server configuration " src="../assets/openvpn_server_configuration_07.png" /></a></p>
+<h3 id="routage">Routage</h3>
+<p>Le routage du réseau virtuelle du serveur OpenVPN est complètement ouvert sur tout le réseau PfSense :</p>
+<p><a href="../assets/openvpn_routage_configuration.png"><img alt="openvpn routage configuration" src="../assets/openvpn_routage_configuration.png" /></a></p>
+<p>L'interface public est configurée pour laisser passer le traffic OpenVPN entrant en UDP sur le port 1194 :</p>
+<p><a href="../assets/openvpn_wan_routage.png"><img alt="openvpn wan routage" src="../assets/openvpn_wan_routage.png" /></a></p>
+<h3 id="creation-des-utilisateurs">Création des utilisateurs</h3>
+<p>La création ainsi que la suppression des clients se fait via un script python qui requête sur l'API de PfSense.
+Se référer à la <a href="/pfsense/#gestion-des-utilisateurs">documentation</a> liée.</p>
+<h3 id="configuration-des-clients">Configuration des clients</h3>
+<p>Dans un premier temps, il faut télécharger le client OpenVPN :</p>
+<ul>
+<li>Pour Linux : <a href="https://openvpn.net/openvpn-client-for-linux/">Lien</a></li>
+<li>Pour MacOS : <a href="https://openvpn.net/client-connect-vpn-for-mac-os/">Lien</a></li>
+<li>Pour Windows : <a href="https://openvpn.net/client-connect-vpn-for-windows/">Lien</a></li>
+</ul>
+<p>Ensuite, il suffit d'installer le client, puis de procéder à la configuration du tunnel.</p>
+<h4 id="windows_1">Windows</h4>
+<p>Ouvrir l'application OpenVPN :</p>
+<p><a href="../assets/openvpn_open_application.png"><img alt="openvpn open application" src="../assets/openvpn_open_application.png" /></a></p>
+<p>Importer le fichier de configuration <strong>ovpn</strong> fourni :</p>
+<p><a href="../assets/openvpn_import_configuration.png"><img alt="openvpn import configuration" src="../assets/openvpn_import_configuration.png" /></a></p>
+<p>S'identifier pour la connexion avec l'identifiant fourni ainsi que le mot de passe :</p>
+<p><a href="../assets/openvpn_configure_connection.png"><img alt="openvpn configure connection" src="../assets/openvpn_configure_connection.png" /></a></p>
+<p>Activer la connecion :</p>
+<p><a href="../assets/openvpn_activation.png"><img alt="openvpn activation" src="../assets/openvpn_activation.png" /></a></p>
+<h2 id="rest-api">REST API</h2>
+<p>Pour l'installation, suivre les instructions de la <a href="https://github.com/jaredhendrickson13/pfsense-api#installation">documentation</a> suivante.</p>
+<h3 id="gestion-dns">Gestion DNS</h3>
+<p>Pour gérer les résolutions DNS du router PfSense, un <a href="https://github.com/FR-BEZ-AOSC/SandboxSupport/blob/main/tools/dns.py">script</a> a été écrit pour permettre à tous de pouvoir disposer de la possibilité d'éditer ses propres résolutions.</p>
+<p>Ce script permet :</p>
+<ul>
+<li>Lister toutes les entrées DNS sur serveur PfSense</li>
+<li>Contrôler si une entrée (IP ou Hostname) est présente dans la base de données de PfSense.</li>
+<li>Ajouter une enrée DNS</li>
+<li>Supprimer une entrée DNS</li>
+</ul>
+<p>Dépendances :</p>
+<ul>
+<li>os</li>
+<li>requests</li>
+<li>urllib3</li>
+<li>click</li>
+<li>json</li>
+</ul>
+<p>Pour satisfaire les dépendances :</p>
+<div class="highlight"><pre><span></span><code>pip install ..
+</code></pre></div>
+<p>L'outil est très simple d'utilisation.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>S'assurer que l'IP <strong>10.0.2.10</strong> n'a pas de résolution DNS qui pointe dessus :
+<div class="highlight"><pre><span></span><code>❯ python3 dns.py check -n dev-01
+No match
+</code></pre></div></p>
+<p>S'il y a match, alors les entrées concernées seront affichées :
+<div class="highlight"><pre><span></span><code>❯ python3 dns.py check -i <span class="m">10</span>.0.0.2
++----+---------+------------+----------+---------------------+
+<span class="p">|</span> ID <span class="p">|</span>   Host  <span class="p">|</span>   Domain   <span class="p">|</span>    IP    <span class="p">|</span>     Description     <span class="p">|</span>
++----+---------+------------+----------+---------------------+
+<span class="p">|</span> <span class="m">6</span>  <span class="p">|</span> proxmox <span class="p">|</span> infra.aosc <span class="p">|</span> <span class="m">10</span>.0.0.2 <span class="p">|</span> Hyperviseur Proxmox <span class="p">|</span>
+<span class="p">|</span> <span class="m">9</span>  <span class="p">|</span> sandbox <span class="p">|</span> infra.aosc <span class="p">|</span> <span class="m">10</span>.0.0.2 <span class="p">|</span> Hyperviseur Proxmox <span class="p">|</span>
++----+---------+------------+----------+---------------------+
+</code></pre></div></p>
+<p>Puis créer un nouvel enregistrement :
+<div class="highlight"><pre><span></span><code>❯ python3 dns.py create -i <span class="m">10</span>.0.2.21 -d casio.aosc -n dev-01 -c <span class="s2">&quot;Talos control-plane 1&quot;</span>
+Request: Success
+</code></pre></div></p>
+<p>Dans le cas ou le hostname ainsi que le domaine de la nouvelle entrée existerai déjà, le processus de création se stoppera pour ne pas créer de doubles entrées.</p>
+<p>Si besoin d'une suppression, il suffit de récupérer l'identifiant de l'alias pour le supprimer :
+<div class="highlight"><pre><span></span><code>❯ python3 dns.py remove <span class="m">6</span>
+Request: Success
+</code></pre></div></p>
+<p>Pour récupérer l'identifiant, il suffit de checker l'alias ou afficher la base de données entière :
+<div class="highlight"><pre><span></span><code>❯ python3 dns.py show
++----+----------------+------------+-----------+--------------------------------------+
+<span class="p">|</span> ID <span class="p">|</span>      Host      <span class="p">|</span>   Domain   <span class="p">|</span>     IP    <span class="p">|</span>             Description              <span class="p">|</span>
++----+----------------+------------+-----------+--------------------------------------+
+<span class="p">|</span> <span class="m">0</span>  <span class="p">|</span> casio-master-1 <span class="p">|</span> casio.aosc <span class="p">|</span> <span class="m">10</span>.0.2.11 <span class="p">|</span>         casio talos master <span class="m">1</span>         <span class="p">|</span>
+<span class="p">|</span> <span class="m">1</span>  <span class="p">|</span> casio-master-2 <span class="p">|</span> casio.aosc <span class="p">|</span> <span class="m">10</span>.0.2.12 <span class="p">|</span>         casio talos master <span class="m">2</span>         <span class="p">|</span>
+<span class="p">|</span> <span class="m">2</span>  <span class="p">|</span> casio-master-3 <span class="p">|</span> casio.aosc <span class="p">|</span> <span class="m">10</span>.0.2.13 <span class="p">|</span>         casio talos master <span class="m">3</span>         <span class="p">|</span>
+<span class="p">|</span> <span class="m">3</span>  <span class="p">|</span> casio-worker-1 <span class="p">|</span> casio.aosc <span class="p">|</span> <span class="m">10</span>.0.2.14 <span class="p">|</span>         casio talos worker <span class="m">1</span>         <span class="p">|</span>
+<span class="p">|</span> <span class="m">4</span>  <span class="p">|</span> casio-worker-2 <span class="p">|</span> casio.aosc <span class="p">|</span> <span class="m">10</span>.0.2.15 <span class="p">|</span>         casio talos worker <span class="m">2</span>         <span class="p">|</span>
+<span class="p">|</span> <span class="m">5</span>  <span class="p">|</span> casio-worker-3 <span class="p">|</span> casio.aosc <span class="p">|</span> <span class="m">10</span>.0.2.16 <span class="p">|</span>         casio talos worker <span class="m">3</span>         <span class="p">|</span>
+<span class="p">|</span> <span class="m">6</span>  <span class="p">|</span>    proxmox     <span class="p">|</span> infra.aosc <span class="p">|</span>  <span class="m">10</span>.0.0.2 <span class="p">|</span>         Hyperviseur Proxmox          <span class="p">|</span>
+<span class="p">|</span> <span class="m">7</span>  <span class="p">|</span>     router     <span class="p">|</span> infra.aosc <span class="p">|</span>  <span class="m">10</span>.0.0.1 <span class="p">|</span> Router principale de l<span class="s1">&#39;infrastruture |</span>
+<span class="s1">| 8  |       rt       | infra.aosc |  10.0.0.1 | Router principale de l&#39;</span>infrastruture <span class="p">|</span>
+<span class="p">|</span> <span class="m">9</span>  <span class="p">|</span>    sandbox     <span class="p">|</span> infra.aosc <span class="p">|</span>  <span class="m">10</span>.0.0.2 <span class="p">|</span>         Hyperviseur Proxmox          <span class="p">|</span>
++----+----------------+------------+-----------+--------------------------------------+
+</code></pre></div></p>
+</div>
+<p>En cas de problème dans l'utilisation de l'outil, se référer au manuel.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Affichage de l'aide :</p>
+<div class="highlight"><pre><span></span><code>❯ python3 dns.py --help
+Usage: dns.py <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>ARGS<span class="o">]</span>...
+
+Manage the PfSense DNS
+
+Options:
+--help  Show this message and exit.
+
+Commands:
+check    Check availibility of a new <span class="nb">alias</span>
+create   Create a new <span class="nb">alias</span>
+remove   Remove an <span class="nb">alias</span> by its row ID
+show     List all <span class="nb">alias</span>
+version  Print script version
+</code></pre></div>
+<p>Affichage de l'aide des sous commandes :</p>
+<div class="highlight"><pre><span></span><code>❯ python3 dns.py check --help
+Usage: dns.py check <span class="o">[</span>OPTIONS<span class="o">]</span> FIELD
+
+Check availibility of a new <span class="nb">alias</span>
+
+Options:
+-i, --ip    Required to check an IP
+-n, --name  Required to check an Hostname
+--help      Show this message and exit.
+</code></pre></div>
+</div>
+<h3 id="gestion-des-utilisateurs">Gestion des utilisateurs</h3>
+<p>Pour gérer les utilisateurs du router PfSense, un <a href="https://github.com/FR-BEZ-AOSC/SandboxSupport/blob/main/tools/user.py">script</a> a été écrit pour permettre à tous de pouvoir disposer de la possibilité d'éditer ses propres résolutions.</p>
+<p>Ce script permet :</p>
+<ul>
+<li>Lister toutes les utilisateurs du serveur PfSense</li>
+<li>Contrôler si un utilisateur est présent ou pas</li>
+<li>Ajouter un utilisateur</li>
+<li>Supprimer un utilisateur</li>
+</ul>
+<p>Dépendances :</p>
+<ul>
+<li>os</li>
+<li>requests</li>
+<li>urllib3</li>
+<li>click</li>
+<li>json</li>
+</ul>
+<p>Pour satisfaire les dépendances :</p>
+<div class="highlight"><pre><span></span><code>pip install ..
+</code></pre></div>
+<p>L'outil est très simple d'utilisation.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>Afficher tous les utilisateurs :</p>
+<div class="highlight"><pre><span></span><code>+----+------+--------+----------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+<span class="p">|</span> ID <span class="p">|</span> UID  <span class="p">|</span>  Nom   <span class="p">|</span>     Description      <span class="p">|</span> Expiration <span class="p">|</span>                                                                                                             Clé publique SSH                                                                                                             <span class="p">|</span>
++----+------+--------+----------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+<span class="p">|</span> <span class="m">0</span>  <span class="p">|</span>  <span class="m">0</span>   <span class="p">|</span> admin  <span class="p">|</span> System Administrator <span class="p">|</span>            <span class="p">|</span> <span class="nv">ZWNkc2Etc2hhMi1uaXN0cDI1NiBBQUFBRTJWalpITmhMWE5vWVRJdGJtbHpkSEF5TlRZQUFBQUlibWx6ZEhBeU5UWUFBQUJCQklUWE1RQXI5dDNNaEcyTS8wVFBFdlhiS2VUYnZ6RzlCVlVxS2ZMY1hSa1BVSk9Wc2s0QlF4eTVXT1BnMTZ0d3U5ZFpMQytFZDlwdnREN05XL2NNeSswPSBidXJkQHRoZW5lc3Q</span><span class="o">=</span> <span class="p">|</span>
+<span class="p">|</span> <span class="m">1</span>  <span class="p">|</span> <span class="m">2000</span> <span class="p">|</span> nbecu  <span class="p">|</span>     Nicolas Becu     <span class="p">|</span>            <span class="p">|</span> <span class="nv">ZWNkc2Etc2hhMi1uaXN0cDI1NiBBQUFBRTJWalpITmhMWE5vWVRJdGJtbHpkSEF5TlRZQUFBQUlibWx6ZEhBeU5UWUFBQUJCQklUWE1RQXI5dDNNaEcyTS8wVFBFdlhiS2VUYnZ6RzlCVlVxS2ZMY1hSa1BVSk9Wc2s0QlF4eTVXT1BnMTZ0d3U5ZFpMQytFZDlwdnREN05XL2NNeSswPSBidXJkQHRoZW5lc3Q</span><span class="o">=</span> <span class="p">|</span>
+<span class="p">|</span> <span class="m">2</span>  <span class="p">|</span> <span class="m">2001</span> <span class="p">|</span> runner <span class="p">|</span>    runner ansible    <span class="p">|</span>            <span class="p">|</span> <span class="nv">ZWNkc2Etc2hhMi1uaXN0cDI1NiBBQUFBRTJWalpITmhMWE5vWVRJdGJtbHpkSEF5TlRZQUFBQUlibWx6ZEhBeU5UWUFBQUJCQklUWE1RQXI5dDNNaEcyTS8wVFBFdlhiS2VUYnZ6RzlCVlVxS2ZMY1hSa1BVSk9Wc2s0QlF4eTVXT1BnMTZ0d3U5ZFpMQytFZDlwdnREN05XL2NNeSswPSBidXJkQHRoZW5lc3Q</span><span class="o">=</span> <span class="p">|</span>
++----+------+--------+----------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+</code></pre></div>
+<p>Controller la présence d'un utilisateur :</p>
+<div class="highlight"><pre><span></span><code>❯ python3 user.py check jallen
+No match
+</code></pre></div>
+<p>Ajouter un utilisateur :</p>
+<div class="highlight"><pre><span></span><code>❯ python3 user.py create -n <span class="s2">&quot;jallen&quot;</span> -p <span class="s2">&quot;Not@Password&quot;</span> -d <span class="s2">&quot;John Allen&quot;</span> -k <span class="s2">&quot;SshPublicKey&quot;</span>
+Request: Success
+❯ python3 user.py check jallen
++----+------+--------+-------------+------------+------------------+
+<span class="p">|</span> ID <span class="p">|</span> UID  <span class="p">|</span>  Nom   <span class="p">|</span> Description <span class="p">|</span> Expiration <span class="p">|</span> Clé publique SSH <span class="p">|</span>
++----+------+--------+-------------+------------+------------------+
+<span class="p">|</span> <span class="m">3</span>  <span class="p">|</span> <span class="m">2009</span> <span class="p">|</span> jallen <span class="p">|</span>  John Allen <span class="p">|</span> <span class="m">01</span>/01/2100 <span class="p">|</span> U3NoUHVibGljS2V5 <span class="p">|</span>
++----+------+--------+-------------+------------+------------------+
+</code></pre></div>
+<p>Supprimer un utilisateur :</p>
+<div class="highlight"><pre><span></span><code>❯ python3 user.py remove jallen
+Request: Success
+❯ python3 user.py check jallen
+No match
+</code></pre></div>
+<p>Afficher l'aide :</p>
+<div class="highlight"><pre><span></span><code>❯ python3 user.py --help
+Usage: user.py <span class="o">[</span>OPTIONS<span class="o">]</span> COMMAND <span class="o">[</span>ARGS<span class="o">]</span>...
+
+  Manage the PfSense DNS
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  check    Check availibility of a new <span class="nb">alias</span>
+  create   Create a new <span class="nb">alias</span>
+  remove   Remove an <span class="nb">alias</span> by its row ID
+  show     List all <span class="nb">alias</span>
+  version  Print script version
+</code></pre></div>
+<p>Afficher l'aide d'une commande :</p>
+<div class="highlight"><pre><span></span><code>❯ python3 user.py create --help
+Usage: user.py create <span class="o">[</span>OPTIONS<span class="o">]</span>
+
+  Create a new <span class="nb">alias</span>
+
+Options:
+  -n, --name TEXT         identifier of the new user  <span class="o">[</span>required<span class="o">]</span>
+  -p, --password TEXT     Password of the new user  <span class="o">[</span>required<span class="o">]</span>
+  -d, --description TEXT  Firstname and Lastname of the new user  <span class="o">[</span>required<span class="o">]</span>
+  -k, --key TEXT          SSH public key of the new user  <span class="o">[</span>required<span class="o">]</span>
+  --help                  Show this message and exit.
+</code></pre></div>
+</div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.expand"], "search": "../assets/javascripts/workers/search.5bf1dace.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.37e9125f.min.js"></script>
+      
+    
+  </body>
+</html>

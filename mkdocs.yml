@@ -1,0 +1,68 @@
+site_name: Support AOSC
+site_url: https://wiki.aosc-portal.com
+
+nav:
+  - Home: index.md
+  - 'Système':
+    - 'AlmaLinux': 'index.md'
+  - 'Réseau':
+    - 'PfSense': 'index.md'
+  - 'Développement':
+    - 'PeerTube': 'index.md'
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.keys
+  - pymdownx.critic
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.inlinehilite
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.betterem
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji 
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.arithmatex:
+      generic: true
+
+theme:
+  logo: assets/logo.png
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: blue
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    # - toc.integrate
+    - navigation.expand
+  shortcuts:
+    help: 191    # ?
+    next: 78     # n
+    previous: 80 # p
+    search: 83   # s
+
+plugins:
+  - search
+  - kroki
