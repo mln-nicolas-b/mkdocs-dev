@@ -4,7 +4,7 @@ summary: Tout ce qu'il y'a a savoir sur la plateforme de sandbox du support
 authors:
     - John Allen
 date: 2022-10-13
-some_url: https://wiki.aosc-portal.com/
+some_url: https://mk.mylittlenest.fr/
 ---
 
 # Home
